@@ -1,0 +1,71 @@
+collection ---> Interface
+If we want to represent group of objects as a single entity.
+example : basket contains different fruits, each fruit is object.
+
+Collection is the root interface.
+It has 3 child interfaces
+1.List
+2.Set
+3.Queue
+
+1.List
+1. List is the child interface of the collection.
+2. Insertion order is preserved.
+3. duplicates are allowed.
+4. heterogeneous objects are allowed.
+5. implementation classes are : ArrayList,LinkedList,Vector,Stack.
+
+1. ArrayList:
+=============
+1. default size of ArrayList is 10.
+2. ArrayList is one of the implementation class of List interface.
+3. internal datastructures is dynamic array.
+4. insertion order is preserved.
+5. duplicates are allowed.
+6. Heterogeneous objects are allowed.
+7. If our frequent operation is retrieval then we use ArrayList.
+
+List<String> list= new ArrayList<>();
+
+2. Vector
+
+1. Vector is a legacy class.
+2. internal datastructures is dynamic array.
+3. All methods in vector are synchronized.
+4. insertion order is preserved.
+5. duplicates are allowed.
+6. Heterogeneous objects are allowed.
+
+ArrayList    vs Vector
+
+https://www.javatpoint.com/difference-between-arraylist-and-vector
+
+LinkedList:
+0. LinkedList is one of the implementation class of List interface.
+1. Insertion order is preserved.
+2. duplicates are allowed.
+3. heterogeneous objects are allowed.
+4. internal data structure is double linked list.
+5. If our frequent operation is insertion or deletion then we use LinkedList.
+
+Difference between LinkedList vs ArrayList:
+
+Linked List :
+internal data structure is double linked list.
+if our frequent operation is insertion or deletion then we use it.
+
+ArrayList:
+internal data structure is dynamic array or re-sizable array.
+if our frequent operation is retrieval then we use arraylist.
+
+2. Set
+1. Set is the child interface of the collection.
+2. Insertion order is not preserved.
+3. duplicates are not allowed.
+4. heterogeneous objects are allowed.
+5. Implementation classes are : HashSet, LinkedHashSet, TreeSet.
+
+3. Queue
+1. it is the child interface of collection
+2. if you want to process the objects based on priority then we will go Queue.
+
