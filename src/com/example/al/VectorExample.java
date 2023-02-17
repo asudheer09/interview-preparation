@@ -48,6 +48,7 @@ public class VectorExample {
             System.out.println(s);
         }
 
+        List l= new Vector();
 
     }
 }
