@@ -91,9 +91,136 @@ TreeSet:
 5. when you add null to the non-empty TreeSet will give null pointer exception.
 6. TreeSet will sort the object based on default natural sorting order.
 
+Map:
+If we want to store the data in the form of key-value pair then we should use Map.
+Map is different from Collection, Map is used to store data in the form of key-value pair where as Collection is used
+to store group of objects as single entity.
+Each key-value pair is called entry.
+
+Map has the following implementation classes :
+HashMap, LinkedHashMap and TreeMap.
+
+HashMap:
+1. HashMap is one of the implementation class of Map interface.
+2. It is used to store data in the form of key-value pair.
+3. key always should unique( duplicates are not allowed in the keys)
+4. But values can be duplicated.
+5. One null key is allowed and multiple null values are allowed.
+6. Internal data structure of HashMap is HashTable.
+
+    public V put(K var1, V var2) {
+        return this.putVal(hash(var1), var1, var2, false, true);
+    }
+
+How HashMap internally works?
+
+    HashMap<String, Integer> map = new HashMap<>();
+    map.put("Aman", 19);  ---> internally it will call hash(key) then it will return index value. 1
+    map.put("Sunny", 29);  ---> internally it will call hash(key) then it will return index value. 5
+    map.put("Ritesh", 39);   ---> internally it will call hash(key) then it will return index value 1
+
+    0--->
+    1---> "Aman", 19--> "Ritesh", 39
+    2--->
+    3--->
+    4---> "Sunny", 29
+
+    map.get(key)---> map.get("Ritesh")---> internally it will call hash(key) then it will return index value 1
+
 
 
 3. Queue
 1. it is the child interface of collection
 2. if you want to process the objects based on priority then we will go Queue.
+
+String vs StringBuffer vs StringBuilder
+
+String immutable
+( once we create an object we cant change, if we try to change it will create new object)
+
+StringBuffer and StringBuilder mutable.
+
+StringBuffer is thread safe and StringBuilder is not thread safe.
+
+performance point of view StringBuilder is faster than StringBuffer.
+
+final vs finally vs finalize()
+
+final is a keyword, applicable for methods, classes and variables
+
+final class     ---> we cant extend this class.
+final variable  ---> we cant change its value once it is assigned.
+final method    ---> we cant override that method in the child class.
+
+finally ---> it is a block used in exception handling along with try or try-catch block.
+
+try{
+
+} finally{
+
+}
+
+try {
+// risky code
+}catch(Exception e){
+// to catch exception
+}finally{
+// resource closing logic
+}
+
+finally block always executed whether exception is occurred or not.
+only way to stop executing the finally block is writing System.exit(0);
+inside finally block we can close the resources or connection closing etc.
+
+finalize() method:
+
+Just before object is garbage collected this finalize() method will be called on that object.
+
+what is garbage collection?
+removing un-used or un-referenced objects from the heap memory.
+
+what is immutable class and how to create ?
+
+Immutable means once we create any object and try to modify it, instead of modification it
+creates new object.
+
+Example : String , Integer,Float, Long, Character etc.
+
+String s= "hello";
+
+s=s+" world"; // hello world
+
+How to create Immutable class :
+1. declare the class as final.
+2. declare all the variable as final.
+3. provides only getters, no-setters.
+4. create constructor to initialize the object.
+
+What is singleton and how to create Singleton?
+
+Singleton means only one object will be created and that object should be re-used.
+
+Use case : while connecting with jdbc we will use this.
+
+How to create singleton?
+
+1. create a class.
+2. declare static variable of the same class.
+3. create private constructor.
+3. define a static factory method that returns same class object.
+4. call the static factory method to get the instance of the class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

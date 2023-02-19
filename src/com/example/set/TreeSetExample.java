@@ -1,4 +1,4 @@
-package com.example.hash;
+package com.example.set;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,6 +19,7 @@ public class TreeSetExample{
         integerSet.add(1);
         integerSet.add(9);
         integerSet.add(3);
+       // integerSet.add("123");
 
         System.out.println(integerSet);
 

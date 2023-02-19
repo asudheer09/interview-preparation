@@ -1,4 +1,4 @@
-package com.example.al;
+package com.example.list;
 
 import java.util.Enumeration;
 import java.util.Iterator;

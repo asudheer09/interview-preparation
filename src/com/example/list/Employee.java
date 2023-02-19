@@ -1,4 +1,4 @@
-package com.example.al;
+package com.example.list;
 
 public class Employee {
     private int id;
