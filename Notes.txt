@@ -211,8 +211,118 @@ How to create singleton?
 4. call the static factory method to get the instance of the class.
 
 
+private and final methods we cant override.
+
+Child child= new Child();
+
+---> By using child class object we can call Child class methods and Parent class methods.
+
+Parent parent= new Parent();
+
+---> By using parent class object we can call only parent class methods.
 
 
+Parent parent= new Child();
+
+---> By using parent class object we can call parent class methods, but if parent class method
+is overridden in the child class then child class overridden method will be called.
+
+
+Why String is immutable?
+
+immutable means once we create an object we cant modify it,String is immutable in java.
+
+let's assume String is mutable and there are three threads are there, all these 3 threads are using
+same String object, if any one thread modifies String then it will be impact for the other two threads.
+
+That's why they made String is immutable.
+
+what is multiple inheritance?
+
+if we extends more than one class at a time is called multiple inheritance.
+
+Example : class C extends A,B{
+
+}
+
+Java doesn't support multiple inheritance through classes , it supports through interfaces.
+
+why java doesn't support ?
+
+class A{
+  method1();
+}
+
+
+class B{
+  method1();
+}
+
+class C extends A,B{
+
+main(){
+ C c= new C();
+ c.method1();
+}
+}
+Achieving multiple inheritance through interfaces:
+
+interface A{
+  method1();
+}
+
+interface B{
+method1();
+}
+
+class C implements A, B{
+method1(){
+ sout("override");
+}
+main(){
+C c= new C();
+c.method1();
+}
+}
+
+====================
+
+HashMap vs HashTable
+
+HashMap
+
+all methods are not synchronized.
+HashMap is faster.
+it is introduced in 1.2
+HashMap allows one null key and multiple null values.
+Iterator returned by the HashMap is fail fast.
+
+HashTable:
+
+all methods are synchronized.
+HashTable is slow.
+it is a legacy.
+HashTable doesn't allow null keys and null values.
+Enumeration return by the Hashtable is fail safe.
+
+
+Fail Fast and Fail Safe:
+
+Fail-Fast means when we iterate over collection object , if some other thread tries to remove object from
+the collection then we will get concurrent modification exception then we can say iterator is fail-fast.
+Example for fail-fast iterators: ArrayList, HashMap etc.
+
+Fail fast means instead of iterating original collection object, it will create a copy of collection object then
+it iterate on the copy then we can say iterator is fail-safe.
+Example: CopyOnWriteArrayList
+
+
+How to create UserDefined or CustomExceptions in Java.
+
+1. create a class and give the class name that ends with Exception.
+2. extend that class either with Exception or RuntimeException class.
+3. create a constructor and call super class constructor from it.
+4. use throw class followed by your exception class with error message.
 
 
 
