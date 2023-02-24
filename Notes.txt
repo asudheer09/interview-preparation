@@ -312,17 +312,129 @@ Fail-Fast means when we iterate over collection object , if some other thread tr
 the collection then we will get concurrent modification exception then we can say iterator is fail-fast.
 Example for fail-fast iterators: ArrayList, HashMap etc.
 
-Fail fast means instead of iterating original collection object, it will create a copy of collection object then
+Fail safe means instead of iterating original collection object, it will create a copy of collection object then
 it iterate on the copy then we can say iterator is fail-safe.
 Example: CopyOnWriteArrayList
 
 
 How to create UserDefined or CustomExceptions in Java.
 
-1. create a class and give the class name that ends with Exception.
+1. create a class and give the class name that ends with Exception. Example: InvalidVoterException
 2. extend that class either with Exception or RuntimeException class.
 3. create a constructor and call super class constructor from it.
 4. use throw class followed by your exception class with error message.
+  throw new InvalidVoterException("not a valid voter");
+
+Exception : Exception is an event that disturbs the normal flow of the program execution.
+
+                10 statements
+                5--> exception
+
+Exceptions are  types:
+1. Checked Exceptions or Compiletime exceptions: occur at compile time.
+    Example: InturreptedException, IOException, SQLException
+2. Unchecked or RuntimeException: occur at runtime
+    Example: ArithmeticException
+             NullPointerException
+             ArrayIndexOutOfBoundException
+             NumberFormatException
+             StringOufOfBoundException etc.
+
+How to handle exceptions in java ?
+
+try         -----> risky code
+catch       -----> to catch the exception object
+finally     -----> it always executes irrespective of exception occurred or not. used to close the resource.
+throw       -----> using it you can throw the exception object manually.
+throws      -----> inform to the caller about this method may throw exception.
+
+Throwable: it is the parent class for Exception and Error.
+
+try{
+  risky code
+}catch(Child/Subclass e){
+
+}catch(Superclass e){
+
+}
+
+throw vs throws
+
+throw :
+1. throw is used to throw exception manually.
+2. throw is followed by an instance of an exception.
+    throw new InvaildVoterException("not a valid voter")
+3. we cant throw multiple exceptions at a time.
+4. throw is used inside a method.
+
+
+throws:
+1. it used to declare an exception.
+2. throws is followed by exception class
+ public static void someMethod() throws InterruptedException {
+        Thread.sleep(2000);
+    }
+3. we can declare multiple exceptions followed by ,
+public static void someMethod() throws InterruptedException,IOException,SQLException {
+        Thread.sleep(2000);
+    }
+4. throws is used inside a method signature.
+
+
+Error Vs Exception
+
+Exception :
+1. Exception can be recovered
+2. Exception categorized into 2
+    a. checked
+    b.unchecked
+3. Example: ArithmeticException, ArrayIndexOutOfBoundException etc.
+4. most of the time exceptions are caused due to program code only.
+
+Error:
+1. cant be recovered.
+2. errors are not categorized and they are always unchecked.
+3. Example : OutOfMemoryError,StackOverflowError etc
+4. Most of the time errors are occurred due to lack of system resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How HashMap internally works?
+
+    HashMap<String, Integer> map = new HashMap<>();
+    map.put("Aman", 19);
+
+When we call the put() method, then it calculates the hash code of the Key "Aman."
+Suppose the hash code of "Aman" is 2657860.
+To store the Key-value in bucket in HashMap object, we have to calculate the index.
+
+ Formulae :     Index = hashcode(Key) & (n-1)
+                Index = 2657860 & (16-1) = 4
+
+  Here index value is the bucket location where the map want to store the key-value pair.
+  If the bucket location is empty then key-value pair will be stored at the bucket location.
+
+
+
+ https://www.javatpoint.com/working-of-hashmap-in-java
+
+What is the contract between equals() and hashCode() method.
+
+If two objects are equal by equal() method then they must return same hash code.
+Whenever we override equals() method then we must override hashCode() method also.
+
+
 
 
 
